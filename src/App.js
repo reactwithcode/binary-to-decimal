@@ -1,10 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
 import { useState } from 'react';
+import { convert } from './binary';
 
 function App() {
 	const [binary, setBinary] = useState('');
 	const [number, setNumber] = useState('');
+
+	console.log(binary.split(''));
 
 	return (
 		<div className="App">
@@ -23,7 +26,7 @@ function App() {
 				</p>
 				<button
 					onClick={() => {
-						setNumber('null');
+						setNumber(convert(binary.split('')));
 					}}
 				>
 					Convert Binary to Decimal
